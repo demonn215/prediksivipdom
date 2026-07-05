@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Saya</title>
+
+<style>
+body{
+    margin:0;
+    background:#051b08;
+    color:white;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+    width:350px;
+    background:#0d2512;
+    border:2px solid #00ff66;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 0 30px #00ff66;
+}
+
+h1{
+    color:#00ff66;
+    text-shadow:0 0 15px #00ff66;
+}
+
+#clock{
+    font-size:34px;
+    margin:20px 0;
+    font-weight:bold;
+}
+
+button{
+    background:#00ff66;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+<h1>Dashboard Saya</h1>
+
+<div id="clock"></div>
+
+<p id="date"></p>
+
+<button>Mulai</button>
+
+</div>
+
+<script>
+
+function updateClock(){
+
+const now=new Date();
+
+document.getElementById("clock").innerHTML=
+now.toLocaleTimeString("id-ID");
+
+document.getElementById("date").innerHTML=
+now.toLocaleDateString("id-ID",{
+weekday:"long",
+day:"numeric",
+month:"long",
+year:"numeric"
+});
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+</script>
+
+</body>
+</html>
